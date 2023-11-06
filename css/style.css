@@ -1,0 +1,19 @@
+:root {
+    --color-bg-primary: #222222;
+    --color-txt-primary: #ffffff;
+}
+
+html {
+    color: var(--color-txt-primary);
+}
+
+button {
+    color: var(--color-txt-primary);
+}
+
+.gradient-border {
+    background: linear-gradient(var(--color-bg-primary), var(--color-bg-primary)) padding-box,
+                linear-gradient(to right, darkblue, darkorchid) border-box;
+    border-radius: 1em;
+    border: 4px solid transparent;
+}
