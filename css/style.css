@@ -5,15 +5,64 @@
 
 html {
     color: var(--color-txt-primary);
+    background: var(--color-bg-primary);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100%;
 }
 
 button {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr;
+    gap: 0 0;
+    grid-template-areas: 
+        "img text";
+    margin: auto;
+    align-items: center;
     color: var(--color-txt-primary);
+    cursor: pointer;
 }
 
-.gradient-border {
+button:hover {
+    -webkit-animation: shake 0.3s ease-in-out both;
+    animation: shake 0.3s ease-in-out both;
+}
+
+button.gradient-border {
     background: linear-gradient(var(--color-bg-primary), var(--color-bg-primary)) padding-box,
                 linear-gradient(to right, darkblue, darkorchid) border-box;
     border-radius: 1em;
     border: 4px solid transparent;
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    25% {
+        -webkit-transform: translateX(-6px);
+        transform: translateX(-6px);
+    }
+    75% {
+        -webkit-transform: translateX(6px);
+        transform: translateX(6px);
+    }
+}
+
+@-webkit-keyframes shake {
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    25% {
+        -webkit-transform: translateX(-6px);
+        transform: translateX(-6px);
+    }
+    75% {
+        -webkit-transform: translateX(6px);
+        transform: translateX(6px);
+    }
 }
