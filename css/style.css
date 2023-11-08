@@ -30,7 +30,7 @@
 }
 
 /* phones */
-@media screen and (max-width: 500px){
+@media screen and (max-width: 500px){  
     h1 {
         font-size: 3.6em;
         margin: 0.45em
@@ -116,7 +116,7 @@ button:hover {
 }
 
 #popup-container {
-    /* display: none; */
+    display: none;
     position: absolute;
     left: 0;
     right: 0;
@@ -126,6 +126,8 @@ button:hover {
     height: 100%;
     padding: 8px;
     backdrop-filter: blur(5px);
+    -webkit-animation: fadeIn 0.15s ease-in-out;
+    animation: fadeIn 0.15s ease-in-out;
 }
 
 #popup {
@@ -144,6 +146,24 @@ button:hover {
     background: var(--color-accent-two);
     border-radius: 5px;
     backdrop-filter: brightness(10%);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes shake {
