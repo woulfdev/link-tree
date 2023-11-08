@@ -18,6 +18,13 @@
         width: 60px;
         height: 60px;
     }
+
+    button {
+        margin: auto;
+        margin-top: 0.5vw;
+        max-width: 500px;
+        min-width: 400px;
+    }
 }
 
 /* phones */
@@ -35,6 +42,13 @@
         width: 40px;
         height: 40px;
     }
+
+    button {
+        margin: auto;
+        margin-top: 1.3vw;
+        max-width: 450px;
+        min-width: 200px;
+    }
 }
 
 html {
@@ -46,17 +60,15 @@ html {
 }
 
 button {
+    position: relative;
     display: grid;
     grid-template-columns: 1.5fr 4.5fr;
     grid-template-rows: auto;
     gap: 0 0;
     grid-template-areas: 
         "img text";
-    margin: auto;
-    margin-top: 0.5vw;
+    width: 100%;
     align-items: center;
-    max-width: 500px;
-    min-width: 400px;
     color: var(--color-txt-primary);
     cursor: pointer;
 }
