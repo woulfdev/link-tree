@@ -90,8 +90,8 @@ button.gradient-border {
     margin-bottom: 5em;
     min-width: 100px;
     min-height: 100px;
-    max-width: 350px;
-    max-height: 350px;
+    max-width: 250px;
+    max-height: 250px;
     width: 20vw;
     height: 20vw;
 }
