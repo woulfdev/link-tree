@@ -22,7 +22,7 @@ button {
     margin-top: 0.5vw;
     align-items: center;
     max-width: 500px;
-    min-width: 300px;
+    min-width: 400px;
     color: var(--color-txt-primary);
     cursor: pointer;
 }

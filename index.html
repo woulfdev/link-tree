@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Woulf</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
     <h1>Woulf</h1>
-    <button class="gradient-border">
+    <button class="button gradient-border" onclick="openLink('mailto:contact@elia-woulf.info')">
         <div>
             <img src="img/email-icon.png" alt="">
         </div>
@@ -17,7 +18,7 @@
             <p>contact@elia-woulf.info</p>
         </div>
     </button>
-    <button class="gradient-border">
+    <button class="button gradient-border" onclick="openLink('https://github.com/woulfcoder')">
         <div>
             <img src="img/github-logo.png" alt="">
         </div>
@@ -26,13 +27,22 @@
             <p>woulfcoder</p>
         </div>
     </button>
-    <button class="gradient-border">
+    <button class="button gradient-border">
         <div>
-            <img src="img/email-icon.png" alt="">
+            <img src="img/lostandfound-icon.png" alt="">
         </div>
         <div>
-            <h2>E-Mail</h2>
-            <p>contact@elia-woulf.info</p>
+            <h2>Lost & Found</h2>
+            <p>If you found something click here.</p>
+        </div>
+    </button>
+    <button class="button gradient-border" onclick="openLink('https://ko-fi.com/woulf')">
+        <div>
+            <img src="img/kofi-logo.png" alt="">
+        </div>
+        <div>
+            <h2>Support me</h2>
+            <p>ko-fi.com/woulf</p>
         </div>
     </button>
 </body>
