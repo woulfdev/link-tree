@@ -1,6 +1,8 @@
 :root {
     --color-bg-primary: #222222;
     --color-txt-primary: #ffffff;
+    --color-accent-one: #00008b;
+    --color-accent-two: #9932cc;
 }
 
 /* larger screens */
@@ -80,7 +82,7 @@ button:hover {
 
 button.gradient-border {
     background: linear-gradient(var(--color-bg-primary), var(--color-bg-primary)) padding-box,
-                linear-gradient(to right, darkblue, darkorchid) border-box;
+                linear-gradient(to right, var(--color-accent-one), var(--color-accent-two)) border-box;
     border-radius: 1em;
     border: 4px solid transparent;
 }
@@ -94,6 +96,16 @@ button.gradient-border {
     max-height: 250px;
     width: 20vw;
     height: 20vw;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent-two);
+    border-radius: 5px;
+    backdrop-filter: brightness(10%);
 }
 
 @keyframes shake {
