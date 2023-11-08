@@ -53,12 +53,29 @@
     }
 }
 
-html {
+html {    
     color: var(--color-txt-primary);
     background: var(--color-bg-primary);
+    /* background pattern from https://css-pattern.com */
+    --size: 200px; /* control the size */
+    --c1: #1d1d1d;
+    --c2: #202122;
+    --c3: #151515;
+
+    background:repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 180deg) 
+                calc(.5*var(--size)) calc(.5*var(--size)*0.577),
+                repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 180deg);
+    background-size: var(--size) calc(var(--size)*0.577);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100%;
+    height: 100vh;
     text-align: center;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 8px;
+    height: 100%;
 }
 
 button {
@@ -80,7 +97,7 @@ button:hover {
     animation: shake 0.3s ease-in-out both;
 }
 
-button.gradient-border {
+.gradient-border {
     background: linear-gradient(var(--color-bg-primary), var(--color-bg-primary)) padding-box,
                 linear-gradient(to right, var(--color-accent-one), var(--color-accent-two)) border-box;
     border-radius: 1em;
@@ -96,6 +113,26 @@ button.gradient-border {
     max-height: 250px;
     width: 20vw;
     height: 20vw;
+}
+
+#popup-container {
+    /* display: none; */
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    height: 90%;
+    padding: 8px;
+    backdrop-filter: blur(5px);
+}
+
+#popup {
+    transform: translate(0, 50%);
+    margin: auto;
+    max-width: 500px;
+    min-width: 200px;
 }
 
 ::-webkit-scrollbar {
