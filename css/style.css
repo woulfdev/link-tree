@@ -32,12 +32,12 @@
 /* phones */
 @media screen and (max-width: 500px){  
     h1 {
-        font-size: 3.6em;
+        font-size: 3.8em;
         margin: 0.45em
     }
 
     p {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
     img {
