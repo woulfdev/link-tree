@@ -1,0 +1,234 @@
+:root {
+  --color-bg-primary: #222222;
+  --color-txt-primary: #ffffff;
+  --color-accent-one: #00008b;
+  --color-accent-two: #9932cc;
+}
+
+/* larger screens */
+@media screen and (min-width: 501px) {
+  h1 {
+      font-size: 4em;
+      margin: 0.5em;
+  }
+  
+  p {
+      font-size: 1em;
+  }
+
+  img {
+      width: 5em;
+      height: 5em;
+  }
+
+  button {
+      margin: auto;
+      margin-top: 0.5vw;
+      max-width: 500px;
+      min-width: 400px;
+  }
+}
+
+/* phones */
+@media screen and (max-width: 500px){  
+  h1 {
+      font-size: 3.8em;
+      margin: 0.45em
+  }
+
+  p {
+      font-size: 1.2em;
+  }
+
+  img {
+      width: 4em;
+      height: 4em;
+  }
+
+  button {
+      margin: auto;
+      margin-top: 1.3vw;
+      max-width: 450px;
+      min-width: 200px;
+  }
+}
+
+html {    
+  color: var(--color-txt-primary);
+  background: var(--color-bg-primary);
+  /* background pattern from https://css-pattern.com */
+  --size: 200px; /* control the size */
+  --c1: #1d1d1d;
+  --c2: #202122;
+  --c3: #151515;
+
+  background:repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 180deg) 
+              calc(.5*var(--size)) calc(.5*var(--size)*0.577),
+              repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 180deg);
+  background-size: var(--size) calc(var(--size)*0.577);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  text-align: center;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 8px;
+  height: 100%;
+}
+
+button {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.5fr 4.5fr;
+  grid-template-rows: auto;
+  gap: 0 0;
+  grid-template-areas: 
+      "img text";
+  width: 100%;
+  align-items: center;
+  color: var(--color-txt-primary);
+  cursor: pointer;
+}
+
+button:hover {
+  -webkit-animation: shake 0.3s ease-in-out both;
+  animation: shake 0.3s ease-in-out both;
+}
+
+.gradient-border {
+  background: linear-gradient(var(--color-bg-primary), var(--color-bg-primary)) padding-box,
+              linear-gradient(to right, var(--color-accent-one), var(--color-accent-two)) border-box;
+  border-radius: 1em;
+  border: 4px solid transparent;
+}
+
+#woulf-logo {
+  margin-top: 5em;
+  margin-bottom: 5em;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 250px;
+  max-height: 250px;
+  width: 20vw;
+  height: 20vw;
+}
+
+#popup-container {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  height: 100%;
+  padding: 8px;
+  backdrop-filter: blur(5px);
+  -webkit-animation: fadeIn 0.15s ease-in-out;
+  animation: fadeIn 0.15s ease-in-out;
+}
+
+#popup {
+  transform: translate(0, 50%);
+  margin: auto;
+  max-width: 500px;
+  min-width: 200px;
+  padding: 8px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-two);
+  border-radius: 5px;
+  backdrop-filter: brightness(10%);
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+  }
+  25% {
+      -webkit-transform: translateX(-6px);
+      transform: translateX(-6px);
+  }
+  75% {
+      -webkit-transform: translateX(6px);
+      transform: translateX(6px);
+  }
+}
+
+@-webkit-keyframes shake {
+  0%,
+  100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+  }
+  25% {
+      -webkit-transform: translateX(-6px);
+      transform: translateX(-6px);
+  }
+  75% {
+      -webkit-transform: translateX(6px);
+      transform: translateX(6px);
+  }
+}
+
+.snowflake {
+  --size: 1vw;
+  width: var(--size);
+  height: var(--size);
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -5vh;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translate3d(var(--left-ini), 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--left-end), 110vh, 0);
+  }
+}
+
+@for $i from 1 through 50 {
+  .snowflake:nth-child(#{$i}) {
+    --size: #{random(5) * 0.2}vw;
+    --left-ini: #{random(20) - 10}vw;
+    --left-end: #{random(20) - 10}vw;
+    left: #{random(100)}vw;
+    animation: snowfall #{5 + random(10)}s linear infinite;
+    animation-delay: -#{random(10)}s;
+  }
+}
+
+/* added small blur every 6 snowflakes*/
+.snowflake:nth-child(6n) {
+  filter: blur(1px);
+}
