@@ -11,3 +11,14 @@ function openLink(link) {
 function openPopUp() {
     document.getElementById('popup-container').style.display = 'block'
 }
+
+function setActiveEvent() {
+    switch (Date().getMonth()) {
+        case 12:
+            break
+    }
+}
+
+function eventChristmas() {
+
+}
